@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "threads-collection-001",
+		"name": "Threads API",
+		"description": "Colección para probar los endpoints de Threads (Hilos de discusión)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Thread",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"¿Cuál es el mejor framework JavaScript?\",\n  \"content\": \"Estoy empezando en desarrollo web y quiero saber qué framework me recomiendan para empezar: React, Vue o Angular?\",\n  \"boardId\": \"BOARD_ID_AQUI\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/thread/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thread",
+						"create"
+					]
+				},
+				"description": "Crea un nuevo Thread (Hilo de discusión). Reemplaza BOARD_ID_AQUI con un ID de Board válido."
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Thread por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/thread/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thread",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "ID del Thread a obtener"
+						}
+					]
+				},
+				"description": "Obtiene un Thread específico por su ID con todas sus respuestas"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Threads por Board ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/thread/board/:boardId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thread",
+						"board",
+						":boardId"
+					],
+					"variable": [
+						{
+							"key": "boardId",
+							"value": "",
+							"description": "ID del Board para obtener sus Threads"
+						}
+					]
+				},
+				"description": "Obtiene todos los Threads que pertenecen a un Board específico"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Reply (Respuesta)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": \"Yo te recomiendo empezar con React, tiene una gran comunidad y muchos recursos para aprender. Además, es muy demandado en el mercado laboral.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/thread/reply/:threadId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thread",
+						"reply",
+						":threadId"
+					],
+					"variable": [
+						{
+							"key": "threadId",
+							"value": "",
+							"description": "ID del Thread al que se agregará la respuesta"
+						}
+					]
+				},
+				"description": "Agrega una respuesta anónima a un Thread existente"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Thread",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/thread/delete/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thread",
+						"delete",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "ID del Thread a eliminar"
+						}
+					]
+				},
+				"description": "Elimina un Thread por su ID"
+			},
+			"response": []
+		}
+	]
+}
+

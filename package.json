@@ -1,0 +1,26 @@
+{
+  "name": "2025-2-express-mongo",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc && bun run dist/index"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "5"
+  },
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mongodb": "^4.0.7",
+    "@types/mongoose": "^5.11.97",
+    "bcryptjs": "^2.4.3",
+    "express": "5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "6.19.0",
+    "mongoose": "8.18.1"
+  }
+}
